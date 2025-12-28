@@ -20,7 +20,10 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://chattifiy-lse6.vercel.app",
+    origin:[
+    "http://localhost:5173",
+    "https://chattifiy-lse6.vercel.app"
+  ],
     credentials: true,
 }));
 

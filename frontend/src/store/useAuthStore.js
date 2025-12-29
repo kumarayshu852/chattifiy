@@ -6,10 +6,7 @@ import {io} from "socket.io-client";
 
 
 
-const BASE_URL =
-  import.meta.env.MODE === "development"
-    ? "http://localhost:5001"
-    : "https://chattifiy.vercel.app";
+const BASE_URL ="https://chattifiy.vercel.app";
 
 
 export const useAuthStore =create ((set, get)=>({

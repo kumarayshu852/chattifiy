@@ -6,7 +6,11 @@ import {io} from "socket.io-client";
 
 
 
-const BASE_URL= import.meta.env.MODE==="development"? "https://chattifiy.vercel.app":"/"
+const BASE_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5001"
+    : "https://chattifiy.vercel.app";
+
 
 export const useAuthStore =create ((set, get)=>({
     authUser:null,
@@ -52,7 +56,7 @@ export const useAuthStore =create ((set, get)=>({
 signup: async (data)=>{
     set({isSigningUp: true});
     try{
-        const res=await axiosInstance.post("auth/signup", data);
+        const res=await axiosInstance.post("/auth/signup", data);
         set({authUser: res.data});
         toast.success("Account created successfully");
 

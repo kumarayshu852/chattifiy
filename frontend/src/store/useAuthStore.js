@@ -6,7 +6,7 @@ import {io} from "socket.io-client";
 
 
 
-const BASE_URL ="https://chattifiy.onrender.com/";
+const BASE_URL ="https://chattifiy.onrender.com";
 
 
 export const useAuthStore =create ((set, get)=>({
